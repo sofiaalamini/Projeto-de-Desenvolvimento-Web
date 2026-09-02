@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="calculadora.js" defer></script>
+    <title>Calculadora de Gorjeta</title>
+</head>
+<body>
+    <main class="page-layout">
+        <section class="context" aria-labelledby="page-title">
+            <p class="kicker">Fundamentos de JavaScript</p>
+            <h1 id="page-title">Feche a conta do jeito certo.</h1>
+            <p>Uma calculadora pequena para uma decisão simples: quanto deixar para quem cuidou da mesa.</p>
+            <div class="receipt-note">
+                <span class="note-mark" aria-hidden="true">+</span>
+                <span>Escolha um percentual ou digite o seu.</span>
+            </div>
+        </section>
+
+        <section class="receipt" aria-labelledby="calculator-title">
+            <header class="receipt-header">
+                <span class="receipt-brand">Mesa 05</span>
+                <span class="receipt-number">#0005</span>
+                <h2 id="calculator-title">Fechamento da mesa</h2>
+                <p>Obrigado pela visita</p>
+            </header>
+
+            <form id="tip-form">
+                <div class="field-group">
+                    <label for="valor-conta">Valor da conta</label>
+                    <div class="input-with-prefix">
+                        <span aria-hidden="true">R$</span>
+                        <input id="valor-conta" name="valorConta" type="number" min="0.01" step="0.01" value="100" required>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="percentual-gorjeta">Gorjeta</label>
+                    <div class="input-with-suffix">
+                        <input id="percentual-gorjeta" name="percentualGorjeta" type="number" min="0" max="100" step="1" value="15" required>
+                        <span aria-hidden="true">%</span>
+                    </div>
+                    <div class="tip-options" aria-label="Percentuais sugeridos">
+                        <button type="button" class="tip-option" data-percentage="10">10%</button>
+                        <button type="button" class="tip-option is-selected" data-percentage="15">15%</button>
+                        <button type="button" class="tip-option" data-percentage="20">20%</button>
+                    </div>
+                </div>
+
+                <p id="form-error" class="form-error" role="alert" hidden></p>
+                <button class="calculate-button" type="submit">Atualizar recibo</button>
+            </form>
+
+            <div id="result" class="result" aria-live="polite">
+                <div class="receipt-line">
+                    <span>Subtotal</span>
+                    <strong id="subtotal-output">R$ 100,00</strong>
+                </div>
+                <div class="receipt-line">
+                    <span>Serviço <small id="percentage-output">(15%)</small></span>
+                    <strong id="tip-output">R$ 15,00</strong>
+                </div>
+                <div class="total-line">
+                    <span>Total</span>
+                    <output id="total-output" for="valor-conta percentual-gorjeta">R$ 115,00</output>
+                </div>
+            </div>
+
+            <footer class="receipt-footer">conta calculada com carinho</footer>
+        </section>
+    </main>
+</body>
+</html>
