@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <meta name="theme-color" content="#e9dec7">
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <main class="container">
+        <h1>TO DO</h1>
+
+        <div class="search-group">
+            <label for="search-input">Buscar</label>
+            <input id="search-input" type="search" placeholder="Digite para buscar...">
+        </div>
+
+        <form id="todo-form">
+            <label for="task-input">Adicionar nova</label>
+            <div class="form-row">
+                <input id="task-input" name="task" type="text" placeholder="Adicionar nova tarefa..." maxlength="120" required>
+                <button type="submit">Adicionar</button>
+            </div>
+            <p id="form-message" class="form-message" role="alert" hidden></p>
+        </form>
+
+        <div class="list-heading"><h2>Tarefas</h2><p id="task-count" class="task-count" aria-live="polite">0 tarefas</p></div>
+        <ul id="task-list" aria-label="Tarefas adicionadas" aria-describedby="task-hint"></ul>
+        <p id="empty-state" class="empty-state"><span aria-hidden="true">+</span>Nenhuma tarefa adicionada ainda.</p>
+
+        <p id="task-hint" class="hint">Marque a caixa ao concluir. Clique no texto para remover.</p>
+    </main>
+</body>
+</html>
